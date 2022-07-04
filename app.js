@@ -9,7 +9,7 @@ const cors = require('cors')
 var db = mysql.createConnection({
     host: 'sql6.freesqldatabase.com',
     user: 'sql6503995',
-    password: process.env.password,
+    password: Mq5XMaZEjI,
     database: "sql6503995"
 });
 
