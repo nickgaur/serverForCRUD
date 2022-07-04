@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 const express = require('express')
 const mysql = require('mysql');
 const bodyParser = require('body-parser')
@@ -19,6 +22,7 @@ db.connect((err) => {
         console.log("MySql Connected!!")
     }
 });
+
 
 // // CREATING NEW DATABASE
 // db.query("CREATE DATABASE nodemysql", (err, result) => {
@@ -92,7 +96,7 @@ app.delete('/delete/:id', (req, res) => {
     })
 })
 
-
-app.listen(process.env.port || 5000, () => {
-    console.log("SERVER STARTED ON PORT 8000")
+const port = process.env.port || 8000
+app.listen(port, () => {
+    console.log("SERVER STARTED ON PORT " + port)
 })
